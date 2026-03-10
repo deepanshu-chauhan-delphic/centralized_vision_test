@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centralized Vision</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Price display styles */
+        .price-banner-item-col span {
+            font-weight: bold;
+            color: #28a745;
+            /* Green by default */
+        }
+
+        .price-banner-item-col span.text-danger {
+            color: #dc3545 !important;
+        }
+
+        /* Form validation styles */
+        .is-invalid {
+            border-color: #dc3545 !important;
+        }
+
+        .is-valid {
+            border-color: #28a745 !important;
+        }
+
+        .invalid-feedback {
+            color: #dc3545;
+            font-size: 0.875em;
+        }
+
+        .text-danger {
+            color: #dc3545 !important;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="main-head for-home">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg">
+                <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="Centralized Vision"></a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="banner-sec">
+        <div class="container">
+            <div class="row banner-row">
+                <div class="col-md-6">
+                    <div class="banner-cont">
+                        <h1>Virtual Services Sign Ordering</h1>
+                        <h2>Make sure the bad guys know your property is under LIVE watch!</h2>
+                        <p>Centralized Vision offers multiple sign options with a range of colors for you to choose from. As a new Centralized Vision customer, you are given a $90 credit to allot to your signs. If you choose to spend more than the allotted amount those additional monies will be applied to your next monthly bill.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="banner-img">
+                        <img src="images/banner-img.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-btn-sec">
+        <div class="main-step-form">
+            <div class="banner-step-col-wrap">
+                <div class="container">
+                    <div class="step-bar-wrapper">
+                        <div class="banner-step">
+                            <div class="row banner-step-row step-wrapper">
+                                <div class="col-lg-3 banner-step-col active">
+                                    <div class="banner-step-col-box">
+                                        <span class="step-hd">Virtual Guard Signs</span>
+                                        <span class="step-sm">Select from an array of colors</span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 banner-step-col">
+                                    <div class="banner-step-col-box">
+                                        <span class="step-hd">Virtual Greeter Signs</span>
+                                        <span class="step-sm">Only for Greater Service Customers</span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 banner-step-col">
+                                    <div class="banner-step-col-box">
+                                        <span class="step-hd">Add Shipping Information</span>
+                                        <span class="step-sm">Where would you like your signs sent?</span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 banner-step-col">
+                                    <div class="banner-step-col-box">
+                                        <span class="step-hd">Confirm Information</span>
+                                        <span class="step-sm">Make sure you didn't miss anything</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="price-banner-item">
+                        <div class="price-banner-item-col">
+                            <p>Total Price: <span>$0.00</span></p>
+                        </div>
+                        <div class="price-banner-item-col">
+                            <p>Remaining Credit: <span>$90.00</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="content-btn-wrap hideable-cont">
+                    <h2>Do you have Virtual Guard Service?</h2>
+                    <p>If you signed up for our Virtual Guard Service click "Yes, I have Virtual Guard Service" and follow the instructions on how to order your signs. We have a great varity of colors</p>
+                    <div class="content-btn-wrap-inner">
+                        <a href="#" class="cmn-btn btn-no btn-guard-no">No, skip to Virtual Greeter Signs</a>
+                        <a href="#" class="cmn-btn cmn-btn-red btn-yes btn-guard-yes">Yes, I have Virtual Guard Service</a>
+                    </div>
+                </div>
+
+                <div class="content-btn-wrap hideable-greeter-cont" style="display: none;">
+                    <h2>Do you have Virtual Greeter Service?</h2>
+                    <p>If you signed up for our Virtual Greeter Service click "Yes, I have Virtual Greeter Service" to customize your signs. Otherwise, you can skip to shipping information.
+                    </p>
+                    <div class="content-btn-wrap-inner">
+                        <a href="#" class="cmn-btn btn-no btn-greeter-no">No, skip to Shipping Information</a>
+                        <a href="#" class="cmn-btn cmn-btn-red btn-greeter-yes">Yes, I have Virtual Greeter Service</a>
+                    </div>
+                </div>
+
+                <div class="showable-cont" style="display: none">
+                    <div class="step-contents">
+                        <form id="multiStepForm" action="php/submit-form.php" method="POST"
+                            enctype="multipart/form-data">
+                            <!-- Step 1 - Virtual Guard Service -->
+                            <div class="form-step active">
+                                <div class="content-btn-wrap">
+                                    <h2>Virtual Guard Service</h2>
+                                    <p><a href="#">No, skip to Virtual Greeter Signs →</a></p>
+                                    <p>Please choose your Virtual Greeter Signs:</p>
+                                </div>
+
+                                <div class="row content-form-row gy-3">
+                                    <div class="col-lg-3 col-md-6 col-12">
+                                        <p>
+                                            <b>Aluminum Signs (3mm Thick)</b>
+                                            We offer our standard aluminum sign in multiple colors and sizes. These
+                                            signs
+                                            are durable and will handle even the toughest of weather conditions.
+                                            <button type="button" class="btn-plan-txt" data-bs-toggle="modal"
+                                                data-bs-target="#seeExmpModalOne">See Examples</button>
+                                        </p>
+                                    </div>
+                                    <div class="col-lg-9 col-md-12 col-12 sign-wrapper">
+                                        <div class="form-col-duplicate">
+                                            <div class="row content-form-control-row mx-0">
+                                                <div class="col-lg-4 col-md-6 col-12">
+                                                    <div class="content-form-control">
+                                                        <label>Color: </label>
+                                                        <select name="aluminum_color[]">
+                                                            <option value="">Select color</option>
+                                                            <option value="Blue/White">Blue/White</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-4 col-md-6 col-12">
+                                                    <div class="content-form-control">
+                                                        <label>Size:</label>
+                                                        <select name="aluminum_size[]">
+                                                            <option value="">Select size</option>
+                                                            <option value="12x10.5">12" x 10.5"</option>
+                                                            <option value="24x20.5">24" x 20.5"</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-2 col-md-6 col-12">
+                                                    <div class="content-form-control">
+                                                        <label>Qty:</label>
+                                                        <input type="number" name="aluminum_quantity[]" min="0"
+                                                            placeholder="Quantity" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-2 col-md-6 col-12">
+                                                    <div class="content-form-control">
+                                                        <label>Price:</label>
+                                                        <input type="number" name="aluminum_price[]" min="0" step="0.01"
+                                                            placeholder="$0.00" readonly />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button type="button" class="cmn-btn add-form add-sing"><i
+                                                class="fa-solid fa-plus"></i> Add Signs</button>
+                                    </div>
+                                </div>
+
+                                <div class="row content-form-row gy-3">
+                                    <div class="col-lg-3 col-md-6 col-12">
+                                        <p>
+                                            <b>Window Decals</b>
+                                            These are shield shaped translucent stickers which are perfect for glass
+                                            door
+                                            entryways. You are provided 2 stickers at no additional cost.
+                                            <button type="button" class="btn-plan-txt" data-bs-toggle="modal"
+                                                data-bs-target="#exampleModal">
+                                                See Examples
+                                            </button>
+                                        </p>
+                                    </div>
+                                    <div class="col-lg-9 col-md-12 col-12 sign-wrapper">
+                                        <div class="form-col-duplicate">
+                                            <div class="row content-form-control-row mx-0">
+                                                <div class="col-lg-4 col-md-6 col-12">
+                                                    <div class="content-form-control">
+                                                        <label>Color: </label>
+                                                        <select name="decal_color[]">
+                                                            <option value="">Select color</option>
+                                                            <option value="White">White</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-4 col-md-6 col-12">
+                                                    <div class="content-form-control">
+                                                        <label>Size:</label>
+                                                        <select name="decal_size[]">
+                                                            <option value="">Select size</option>
+                                                            <option value="8">8"</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-2 col-md-6 col-12">
+                                                    <div class="content-form-control">
+                                                        <label>Qty:</label>
+                                                        <input type="number" name="decal_quantity[]" min="0"
+                                                            placeholder="Quantity" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-2 col-md-6 col-12">
+                                                    <div class="content-form-control">
+                                                        <label>Price:</label>
+                                                        <input type="number" name="decal_price[]" min="0" step="0.01"
+                                                            placeholder="$0.00" readonly />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button type="button" class="cmn-btn add-form add-sing"><i
+                                                class="fa-solid fa-plus"></i> Add Sign</button>
+                                    </div>
+                                </div>
+
+                                <div class="row content-form-row gy-3">
+                                    <div class="col-lg-3 col-md-6 col-12">
+                                        <p>
+                                            <b>Sticker Signs</b>
+                                            We also offer our same shield shaped signs in sticker form with the same
+                                            assortment of colors. You are provided 2 stickers at no additional cost.
+                                            <button type="button" class="btn-plan-txt" data-bs-toggle="modal"
+                                                data-bs-target="#">See Examples</button>
+                                        </p>
+                                    </div>
+                                    <div class="col-lg-9 col-md-12 col-12 sign-wrapper">
+                                        <div class="form-col-duplicate">
+                                            <div class="row content-form-control-row mx-0">
+                                                <div class="col-lg-4 col-md-6 col-12">
+                                                    <div class="content-form-control">
+                                                        <label>Color: </label>
+                                                        <select name="sticker_color[]">
+                                                            <option value="">Select color</option>
+                                                            <option value="Black/White">Black/White</option>
+                                                            <option value="Blue/White">Blue/White</option>
+                                                            <option value="Green/White">Green/White</option>
+                                                            <option value="Light Brown/White">Light Brown/White</option>
+                                                            <option value="Red/White">Red/White</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-4 col-md-6 col-12">
+                                                    <div class="content-form-control">
+                                                        <label>Size:</label>
+                                                        <select name="sticker_size[]">
+                                                            <option value="">Select size</option>
+                                                            <option value="8">8"</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-2 col-md-6 col-12">
+                                                    <div class="content-form-control">
+                                                        <label>Qty:</label>
+                                                        <input type="number" name="sticker_quantity[]" min="0"
+                                                            placeholder="Quantity" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-2 col-md-6 col-12">
+                                                    <div class="content-form-control">
+                                                        <label>Price:</label>
+                                                        <input type="number" name="sticker_price[]" min="0" step="0.01"
+                                                            placeholder="$0.00" readonly />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button type="button" class="cmn-btn add-form add-sing"><i
+                                                class="fa-solid fa-plus"></i> Add Sign</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Step 2 - Virtual Greeter Service -->
+                            <div class="form-step">
+                                <div class="content-btn-wrap">
+                                    <h2>Virtual Greeter Service</h2>
+                                    <p><a href="#">No, skip to Shipping Information →</a></p>
+                                    <p>Please choose and customize your Virtual Greeter Signs:</p>
+                                </div>
+
+                                <div class="row content-form-row gy-3">
+                                    <div class="col-lg-3 col-md-6 col-12">
+                                        <p>
+                                            <b>Virtual Greeter Signs</b>
+                                            With our Virtual Greeter service you are provided 2 signs at no additional
+                                            cost to display by your call boxes. These signs can be created with your
+                                            logo.
+                                            <a data-bs-toggle="modal" href="#seeExmpModalTwo">See Examples</a>
+                                            <!-- <button type="button" class="btn-plan-txt" data-bs-toggle="modal"
+                                                data-bs-target="#seeExmpModalOne">See Examples</button> -->
+                                        </p>
+                                    </div>
+                                    <div class="col-lg-9 col-md-12 col-12 sign-wrapper">
+                                        <div class="form-col-duplicate">
+                                            <div class="row content-form-control-row mx-0">
+                                                <div class="col-lg-4 col-md-6 col-12">
+                                                    <div class="content-form-control">
+                                                        <label>Color: </label>
+                                                        <select name="greeter_color[]" required>
+                                                            <option value="">Select color</option>
+                                                            <option value="Black/White">Black/White</option>
+                                                            <option value="Blue/White">Blue/White</option>
+                                                            <option value="Green/White">Green/White</option>
+                                                            <option value="Light Brown/White">Light Brown/White</option>
+                                                            <option value="Red/White">Red/White</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-4 col-md-6 col-12">
+                                                    <div class="content-form-control">
+                                                        <label>Size:</label>
+                                                        <select name="greeter_size[]" required>
+                                                            <option value="">Select size</option>
+                                                            <option value="8x10">8" x 10"</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-2 col-md-6 col-12">
+                                                    <div class="content-form-control">
+                                                        <label>Qty:</label>
+                                                        <input type="number" name="greeter_quantity[]" min="1"
+                                                            placeholder="Quantity" required />
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-2 col-md-6 col-12">
+                                                    <div class="content-form-control">
+                                                        <label>Price:</label>
+                                                        <input type="number" name="greeter_price[]" min="0" step="0.01"
+                                                            placeholder="$0.00" required readonly />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button type="button" class="cmn-btn add-form add-sing"><i
+                                                class="fa-solid fa-plus"></i> Add Sign</button>
+                                    </div>
+                                </div>
+
+                                <div class="row content-form-row gy-3">
+                                    <div class="col-lg-3 col-md-6 col-12">
+                                        <p>
+                                            <b>Text for your signs</b>
+                                            In the text box please tell us exactly how you would like your sign.
+                                        </p>
+                                    </div>
+                                    <div class="col-lg-9 col-md-12 col-12">
+                                        <div class="row content-form-control-row mx-0">
+                                            <div class="col-lg-12 col-md-12 col-12">
+                                                <div class="content-form-control">
+                                                    <label>Text for your signs:</label>
+                                                    <textarea name="sign_text" id="sign_text" rows="4"
+                                                        placeholder="Add text here" required></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row content-form-row gy-3">
+                                    <div class="col-lg-3 col-md-6 col-12">
+                                        <p>
+                                            <b>Upload your logo</b>
+                                            If no logo is uploaded, we will create a standard sign for you.
+                                            <a data-bs-toggle="modal" href="#seeExmpModalThree">See Preview</a> 
+                                        </p>
+                                    </div>
+                                    <div class="col-lg-9 col-md-12 col-12">
+                                        <div class="row content-form-control-row mx-0">
+                                            <div class="col-lg-12 col-md-12 col-12">
+                                                <div class="content-form-control">
+                                                    <div class="upload-box" id="drop-area">
+                                                        <label for="logo_upload">
+                                                            <strong>📎 Add file</strong> or drop it right here
+                                                        </label>
+                                                        <small>File must be in JPG or PNG format</small>
+                                                        <input type="file" name="logo_upload" id="logo_upload"
+                                                            accept=".jpg,.jpeg,.png" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Step 3 - Shipping Information -->
+                            <div class="form-step">
+                                <div class="content-btn-wrap">
+                                    <h2>Shipping Information</h2>
+                                    <p>Please let us know where you would like us to ship your signs, and who will be
+                                        receiving them to ensure they get displayed.</p>
+                                </div>
+                                <div class="row content-form-row gy-3 align-items-start">
+                                    <div class="col-lg-3 col-md-6 col-12">
+                                        <p>
+                                            <b>Introduce your information</b>
+                                            It is important to check your shipping information. Please complete the info
+                                            to finish your request <br />
+                                            *Required fields
+                                        </p>
+                                    </div>
+                                    <div class="col-lg-9 col-md-12 col-12">
+                                        <div class="row content-form-control-row mx-0">
+                                            <div class="col-lg-12 col-md-12 col-12 mb-4">
+                                                <div class="content-form-control">
+                                                    <label>Property Name:</label>
+                                                    <input type="text" name="property_name"
+                                                        placeholder="Add my company name" required>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12 col-md-12 col-12 mb-4">
+                                                <div class="content-form-control">
+                                                    <label>First Name*</label>
+                                                    <input type="text" name="first_name" placeholder="Add my first name"
+                                                        required>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12 col-md-12 col-12 mb-4">
+                                                <div class="content-form-control">
+                                                    <label>Last Name*</label>
+                                                    <input type="text" name="last_name" placeholder="Add my last name"
+                                                        required>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12 col-md-12 col-12 mb-4">
+                                                <div class="content-form-control">
+                                                    <label>Shipping Address*</label>
+                                                    <input type="text" name="shipping_address"
+                                                        placeholder="Add my address" required>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12 col-md-12 col-12 mb-4">
+                                                <div class="content-form-control">
+                                                    <label>State*</label>
+                                                    <select name="state" required>
+                                                        <option value="">Select a state</option>
+                                                        <option value="AL">AL - Alabama</option>
+                                                        <option value="AK">AK - Alaska</option>
+                                                        <option value="AZ">AZ - Arizona</option>
+                                                        <option value="AR">AR - Arkansas</option>
+                                                        <option value="CA">CA - California</option>
+                                                        <option value="CO">CO - Colorado</option>
+                                                        <option value="CT">CT - Connecticut</option>
+                                                        <option value="DE">DE - Delaware</option>
+                                                        <option value="FL">FL - Florida</option>
+                                                        <option value="GA">GA - Georgia</option>
+                                                        <!-- Add more states as needed -->
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12 col-md-12 col-12 mb-4">
+                                                <div class="content-form-control">
+                                                    <label>City*</label>
+                                                    <input type="text" name="city" placeholder="Add my city" required>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12 col-md-12 col-12 mb-4">
+                                                <div class="content-form-control">
+                                                    <label>Zip Code*</label>
+                                                    <input type="text" name="zip_code" placeholder="55555" required>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12 col-md-12 col-12 mb-4">
+                                                <div class="content-form-control">
+                                                    <label>Email Address*</label>
+                                                    <input type="email" name="email" placeholder="example@example.com"
+                                                        required>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12 col-md-12 col-12 mb-4">
+                                                <div class="content-form-control">
+                                                    <label>Phone Number*</label>
+                                                    <input type="tel" name="phone" placeholder="(555) 555-5555"
+                                                        required>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Step 4 - Confirmation -->
+                            <div class="form-step">
+                                <div class="content-confirm-bg">
+                                    <div class="confirm-text">
+                                        <div class="confirm-msg-icon">
+                                            <i class="fa-solid fa-envelope-circle-check"></i>
+                                        </div>
+                                        <h2>Thank you for submitting your form</h2>
+                                        <p>Success! Your submission has been received and is being processed. You will
+                                            receive a call shortly from our end.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Navigation -->
+                            <div class="form-nav step-flow-button">
+                                <button type="button" class="cancel-btn" id="cancelBtn">Cancel</button>
+                                <button type="button" class="cmn-btn cmn-btn-red" id="prevBtn">Previous</button>
+                                <button type="button" class="cmn-btn next" id="nextBtn">Next</button>
+                                <button type="button" class="cmn-btn next" id="submitBtn"
+                                    style="display:none;">Submit</button>
+                                <!-- <button type="button" class="cmn-btn next" id="printBtn"
+                                    style="display:none;">Print</button>
+                                <button type="button" class="cmn-btn next" id="pdfBtn" style="display:none;">Generate
+                                    PDF</button> -->
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal one -->
+    <div class="form-modal modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h3>Virtual Greeter Signages Customized</h3>
+                    <p>These are customized</p>
+                    <img src="images/cus-img.png" alt="customized image" />
+                </div>
+                <div class="modal-footer">
+                    <a href="#" class="cmn-btn" data-bs-dismiss="modal" aria-label="Close">Confirm</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="form-modal modal fade" id="seeExmpModalOne" aria-hidden="true" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h3>Virtual Greeter Signages Standard</h3>
+                    <p>This is an example</p>
+                </div>
+                <div class="modal-footer">
+                    <a href="#" class="cmn-btn" data-bs-dismiss="modal" aria-label="Close">Confirm</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-modal modal fade" id="seeExmpModalTwo" aria-hidden="true" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h3>Virtual Greeter Signages Customized</h3>
+                    <p>These are customized</p>
+                    <img src="images/cus-img.png" alt="customized image" />
+                </div>
+                <div class="modal-footer">
+                    <a href="#" class="cmn-btn" data-bs-dismiss="modal" aria-label="Close">Confirm</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-modal modal fade" id="seeExmpModalThree" aria-hidden="true" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" ></button>
+                </div>
+                <div class="modal-body">
+                    <h3>Your Signs Preview</h3>
+                    <p style="margin-bottom: 12px;">These are customized</p>
+                    <div id="signPreviewBox"
+                        style="border: 2px solid #000; padding: 20px; text-align: center; max-width: 250px; margin: 0 auto; font-family: Arial, sans-serif;">
+                        <img id="previewLogoImg" src="" alt="Logo Preview" style="max-width: 140px; max-height: 140px; margin-bottom: 15px; display:block; margin:auto;" />
+
+                        <div id="previewSignText" style="font-size: 1rem;">Press the Call Button or Dial</div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="#" class="cmn-btn" data-bs-dismiss="modal" aria-label="Close">Confirm</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Jquery-->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/step-form_2025-07-2025_19-27.js"></script>
+
+    <!-- <script>
+        document.addEventListener('DOMContentLoaded', function () {
+
+            const form = document.getElementById('multiStepForm');
+            if (form) {
+                form.addEventListener('submit', function (e) {
+                    e.preventDefault();
+                });
+            }
+
+            const previewLink = document.querySelector('a[data-bs-toggle="modal"][href="#seeExmpModalThree"]');
+            const logoInput = document.getElementById('logo_upload');
+            const previewLogoImg = document.querySelector('#seeExmpModalThree #previewLogoImg');
+            const previewSignText = document.querySelector('#seeExmpModalThree #previewSignText');
+
+            function updatePreview() {
+
+                // Update text
+                const signText = document.getElementById('sign_text')?.value ||
+                    'Press the Confirm Button';
+
+                if (previewSignText) {
+                    previewSignText.textContent = signText;
+                }
+
+                // 🔥 Always generate fresh image preview
+                if (logoInput && logoInput.files.length > 0) {
+                    const file = logoInput.files[0];
+                    const newURL = URL.createObjectURL(file);
+                    previewLogoImg.src = newURL;
+                }
+            }
+
+            // Update when clicking preview
+            if (previewLink) {
+                previewLink.addEventListener('click', function () {
+                    updatePreview();
+                });
+            }
+
+            // Allow selecting same file again
+            if (logoInput) {
+                logoInput.addEventListener('click', function () {
+                    this.value = null;
+                });
+            }
+
+        });
+    </script> -->
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+
+            const previewLogoImg = document.getElementById('previewLogoImg');
+            const previewSignText = document.getElementById('previewSignText');
+            const previewModal = document.getElementById('seeExmpModalThree');
+
+            function updatePreview() {
+                const logoInput = document.getElementById('logo_upload');
+                let selectedFile = null;
+
+                if (!previewLogoImg) return;
+
+                // Update text
+                const signText = document.getElementById('sign_text')?.value
+                    || 'Press the Confirm Button';
+
+                if (previewSignText) {
+                    previewSignText.textContent = signText;
+                }
+
+                // If file selected
+                if (logoInput && logoInput.files && logoInput.files.length > 0) {
+                    selectedFile = logoInput.files[0];
+                } else if (window.selectedLogoFile instanceof File) {
+                    selectedFile = window.selectedLogoFile;
+                }
+
+                if (selectedFile) {
+                    if (!selectedFile.type.startsWith("image/")) {
+                        console.log("Not an image file");
+                        previewLogoImg.src = "";
+                        return;
+                    }
+
+                    const reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        previewLogoImg.src = e.target.result;
+                    };
+
+                    reader.readAsDataURL(selectedFile);
+
+                } else {
+                    previewLogoImg.src = "";
+                }
+            }
+
+            // ✅ Update when file changes
+            document.addEventListener('change', function (event) {
+                if (event.target && event.target.id === 'logo_upload') {
+                    updatePreview();
+                }
+            });
+
+            // ✅ Update when modal opens
+            if (previewModal) {
+                previewModal.addEventListener('show.bs.modal', updatePreview);
+            }
+
+        });
+    </script>
+
+
+
+    <script type="text/plain">
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const aluminumQty = document.querySelectorAll('input[name="aluminum_quantity[]"]');
+            const decalQty = document.querySelectorAll('input[name="decal_quantity[]"]');
+            const stickerQty = document.querySelectorAll('input[name="sticker_quantity[]"]');
+
+            const nextBtn = document.getElementById("nextBtn");
+
+            function getTotalQty(inputs) {
+                let total = 0;
+                inputs.forEach(input => {
+                    total += parseInt(input.value) || 0;
+                });
+                return total;
+            }
+
+            function validateQuantities() {
+                const aluminumTotal = getTotalQty(aluminumQty);
+                const decalTotal = getTotalQty(decalQty);
+                const stickerTotal = getTotalQty(stickerQty);
+
+                // Clear all validation states
+                [...aluminumQty, ...decalQty, ...stickerQty].forEach(i => {
+                    i.classList.remove("is-invalid");
+                });
+
+                // Rule: At least ONE category must have quantity
+                if (aluminumTotal === 0 && decalTotal === 0 && stickerTotal === 0) {
+                    [...aluminumQty, ...decalQty, ...stickerQty].forEach(i => {
+                        i.classList.add("is-invalid");
+                    });
+                    return false;
+                }
+
+                return true;
+            }
+
+            // Validate on change
+            [...aluminumQty, ...decalQty, ...stickerQty].forEach(input => {
+                input.addEventListener("input", validateQuantities);
+            });
+
+            // Validate on Next button
+            nextBtn.addEventListener("click", function () {
+                if (!validateQuantities()) {
+                    alert("Please enter a quantity for Aluminum Signs OR Window Decals OR Sticker Signs.");
+                    return;
+                }
+
+                // If valid → allow your existing step logic to run
+                document.dispatchEvent(new Event("quantityValid"));
+            });
+
+        });
+    </script>
+
+</body>
+
+</html>

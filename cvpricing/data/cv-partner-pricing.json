@@ -1,0 +1,54 @@
+{
+  "virtualGreeter": {
+    "1": [
+      { "residence": 0, "primary": 1.35, "secondary": 1.1 },
+      { "residence": 100, "primary": 1.35, "secondary": 1.1 },
+      { "residence": 101, "primary": 1.5, "secondary": 1.25 },
+      { "residence": 250, "primary": 1.5, "secondary": 1.25 },
+      { "residence": 251, "primary": 1.65, "secondary": 1.4 },
+      { "residence": 500, "primary": 1.65, "secondary": 1.4 }
+    ],
+    "2": [
+      { "residence": 0, "primary": 1.25, "secondary": 1.0 },
+      { "residence": 100, "primary": 1.25, "secondary": 1.0 },
+      { "residence": 101, "primary": 1.4, "secondary": 1.15 },
+      { "residence": 250, "primary": 1.4, "secondary": 1.15 },
+      { "residence": 251, "primary": 1.55, "secondary": 1.30 },
+      { "residence": 500, "primary": 1.55, "secondary": 1.3 }
+    ],
+    "3": [
+      { "residence": 0, "primary": 1.15, "secondary": 0.9 },
+      { "residence": 100, "primary": 1.15, "secondary": 0.9 },
+      { "residence": 101, "primary": 1.3, "secondary": 1.05 },
+      { "residence": 250, "primary": 1.3, "secondary": 1.05 },
+      { "residence": 251, "primary": 1.45, "secondary": 1.20 },
+      { "residence": 500, "primary": 1.45, "secondary": 1.20 }
+    ]
+  },
+  "virtualEngineer": {
+    "1": [
+      { "systems": 0, "noGuard": 0.6, "yesGuard": 0.55 },
+      { "systems": 3, "noGuard": 0.6, "yesGuard": 0.55 },
+      { "systems": 4, "noGuard": 0.75, "yesGuard": 0.65 },
+      { "systems": 6, "noGuard": 0.75, "yesGuard": 0.65 },
+      { "systems": 7, "noGuard": 0.8, "yesGuard": 0.7 },
+      { "systems": 10, "noGuard": 0.8, "yesGuard": 0.7 }
+    ],
+    "2": [
+      { "systems": 0, "noGuard": 0.5, "yesGuard": 0.45 },
+      { "systems": 3, "noGuard": 0.50, "yesGuard": 0.45 },
+      { "systems": 4, "noGuard": 0.65, "yesGuard": 0.55 },
+      { "systems": 6, "noGuard": 0.65, "yesGuard": 0.55 },
+      { "systems": 7, "noGuard": 0.8, "yesGuard": 0.70 },
+      { "systems": 10, "noGuard": 0.8, "yesGuard": 0.70 }
+    ],
+    "3": [
+      { "systems": 0, "noGuard": 0.4, "yesGuard": 0.35 },
+      { "systems": 3, "noGuard": 0.4, "yesGuard": 0.35 },
+      { "systems": 4, "noGuard": 0.55, "yesGuard": 0.45 },
+      { "systems": 6, "noGuard": 0.55, "yesGuard": 0.45 },
+      { "systems": 7, "noGuard": 0.70, "yesGuard": 0.55 },
+      { "systems": 10, "noGuard": 0.7, "yesGuard": 0.55 }
+    ]
+  }
+}

@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centralized Vision</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="step-contents">
+      <form id="multiStepForm" action="" method="POST">
+        <!-- Step 1 -->
+        <div class="form-step active">
+
+          <div class="content-btn-wrap">
+              <h2>Virtual Guard Service</h2>
+              <p><a href="#">No, skip to Virtual Greeter Signs →</a></p>
+              <p>Please choose your Virtual Greeter Signs:</p>
+          </div>
+
+          <div class="row content-form-row gy-3">
+              <div class="col-lg-3 col-md-6 col-12">
+                <p>
+                    <b>Aluminum Signs (3mm Thick)</b>
+                    We offer our standard aluminum sign in multiple colors and sizes. These signs are durable and will handle even the toughest of weather conditions.
+                    <a href="#">See Examples</a>
+                </p>
+              </div>
+              <div class="col-lg-9 col-md-12 col-12 sign-wrapper">
+                <div class="form-col-duplicate">
+                    <div class="row content-form-control-row mx-0">
+                      <div class="col-lg-4 col-md-6 col-12">
+                          <div class="content-form-control">
+                              <label>Color: </label>
+                              <select name="cars" id="cars" required>
+                                  <option value="">Select color</option>
+                                  <option>Blue/White</option>
+                              </select>
+                          </div>
+                      </div>
+                      <div class="col-lg-4 col-md-6 col-12">
+                          <div class="content-form-control">
+                              <label>Size:</label>
+                              <select name="">
+                                  <option value="0">Select size</option>
+                                  <option value="1">17" x 10.5"</option>
+                                  <option value="2">24" x 20.5"</option>
+                              </select>
+                          </div>
+                      </div>
+                      <div class="col-lg-2 col-md-6 col-12">
+                          <div class="content-form-control">
+                              <label>Qty:</label>
+                              <input type="number" name="" placeholder="Quantity" />
+                          </div>
+                      </div>
+                      <div class="col-lg-2 col-md-6 col-12">
+                          <div class="content-form-control">
+                              <label>Price:</label>
+                              <input type="number" name="" placeholder="$0.00" />
+                          </div>
+                      </div>
+                  </div>
+                </div>
+
+                  <button type="button" class="cmn-btn add-form add-sing"><i class="fa-solid fa-plus"></i>  Add Sign</button>
+              </div>
+          </div>
+          <div class="row content-form-row gy-3">
+              <div class="col-lg-3 col-md-6 col-12">
+                <p>
+                    <b>Window Decals</b>
+                    These are shield shaped translucent stickers which are perfect for glass door entryways. You are provided 2 stickers at no additional cost.
+                    <a href="#">See Examples</a>
+                </p>
+              </div>
+              <div class="col-lg-9 col-md-12 col-12 sign-wrapper">
+                <div class="form-col-duplicate">
+                    <div class="row content-form-control-row mx-0">
+                      <div class="col-lg-4 col-md-6 col-12">
+                          <div class="content-form-control">
+                              <label>Color: </label>
+                              <select name="cars" id="cars" required>
+                                  <option value="0">Select color</option>
+                                  <option value="1">Blue/White</option>
+                              </select>
+                          </div>
+                      </div>
+                      <div class="col-lg-4 col-md-6 col-12">
+                          <div class="content-form-control">
+                              <label>Size:</label>
+                              <select name="">
+                                  <option value="0">Select size</option>
+                                  <option value="1">17" x 10.5"</option>
+                                  <option value="2">24" x 20.5"</option>
+                              </select>
+                          </div>
+                      </div>
+                      <div class="col-lg-2 col-md-6 col-12">
+                          <div class="content-form-control">
+                              <label>Qty:</label>
+                              <input type="number" name="" placeholder="Quantity" />
+                          </div>
+                      </div>
+                      <div class="col-lg-2 col-md-6 col-12">
+                          <div class="content-form-control">
+                              <label>Price:</label>
+                              <input type="number" name="" placeholder="$0.00" />
+                          </div>
+                      </div>
+                  </div>
+                </div>
+
+                  <button type="button" class="cmn-btn add-form add-sing"><i class="fa-solid fa-plus"></i>  Add Sign</button>
+              </div>
+          </div>
+            <div class="row content-form-row gy-3">
+              <div class="col-lg-3 col-md-6 col-12">
+                <p>
+                    <b>Sticker Signs</b>
+                    We also offer our same shield shaped signs in sticker form with the same assortment of colors. You are provided 2 stickers at no additional cost.
+                    <a href="#">See Examples</a>
+                </p>
+              </div>
+              <div class="col-lg-9 col-md-12 col-12 sign-wrapper">
+                <div class="form-col-duplicate">
+                    <div class="row content-form-control-row mx-0">
+                      <div class="col-lg-4 col-md-6 col-12">
+                          <div class="content-form-control">
+                              <label>Color: </label>
+                              <select name="cars" id="cars" required>
+                                  <option value="0">Select color</option>
+                                  <option value="1">Blue/White</option>
+                              </select>
+                          </div>
+                      </div>
+                      <div class="col-lg-4 col-md-6 col-12">
+                          <div class="content-form-control">
+                              <label>Size:</label>
+                              <select name="">
+                                  <option value="0">Select size</option>
+                                  <option value="1">17" x 10.5"</option>
+                                  <option value="2">24" x 20.5"</option>
+                              </select>
+                          </div>
+                      </div>
+                      <div class="col-lg-2 col-md-6 col-12">
+                          <div class="content-form-control">
+                              <label>Qty:</label>
+                              <input type="number" name="" placeholder="Quantity" />
+                          </div>
+                      </div>
+                      <div class="col-lg-2 col-md-6 col-12">
+                          <div class="content-form-control">
+                              <label>Price:</label>
+                              <input type="number" name="" placeholder="$0.00" />
+                          </div>
+                      </div>
+                  </div>
+                </div>
+
+                  <button type="button" class="cmn-btn add-form add-sing"><i class="fa-solid fa-plus"></i>  Add Sign</button>
+              </div>
+          </div>
+
+        </div>
+        <!-- Step 2 -->
+        <div class="form-step">
+          <div class="content-btn-wrap">
+              <h2>Virtual Greeter Service</h2>
+              <p><a href="#">No, skip to Shipping Information →</a></p>
+              <p>Please choose and customize your Virtual Greeter Signs:</p>
+          </div>
+
+          <div class="row content-form-row gy-3">
+              <div class="col-lg-3 col-md-6 col-12">
+                <p>
+                    <b>Virtual Greeter Signs</b>
+                    With our Virtual Greeter service you are provided 2 signs at no additional cost to display by your call boxes. These signs can be created with your logo.
+                    <a href="#">See Examples</a>
+                </p>
+              </div>
+              <div class="col-lg-9 col-md-12 col-12 sign-wrapper">
+                <div class="form-col-duplicate">
+                    <div class="row content-form-control-row mx-0">
+                      <div class="col-lg-4 col-md-6 col-12">
+                          <div class="content-form-control">
+                              <label>Color: </label>
+                              <select name="cars" id="cars">
+                                  <option value="0">Select color</option>
+                                  <option value="1">Blue/White</option>
+                              </select>
+                          </div>
+                      </div>
+                      <div class="col-lg-4 col-md-6 col-12">
+                          <div class="content-form-control">
+                              <label>Size:</label>
+                              <select name="">
+                                  <option value="0">Select size</option>
+                                  <option value="1">17" x 10.5"</option>
+                                  <option value="2">24" x 20.5"</option>
+                              </select>
+                          </div>
+                      </div>
+                      <div class="col-lg-2 col-md-6 col-12">
+                          <div class="content-form-control">
+                              <label>Qty:</label>
+                              <input type="number" name="" placeholder="Quantity" required>
+                          </div>
+                      </div>
+                      <div class="col-lg-2 col-md-6 col-12">
+                          <div class="content-form-control">
+                              <label>Price:</label>
+                              <input type="number" name="" placeholder="$0.00" />
+                          </div>
+                      </div>
+                  </div>
+                </div>
+                  <button type="button" class="cmn-btn add-form add-sing"><i class="fa-solid fa-plus"></i>  Add Sign</button>
+              </div>
+          </div>
+          <div class="row content-form-row gy-3">
+              <div class="col-lg-3 col-md-6 col-12">
+                  <p>
+                      <b>Text for your signs</b>
+                      In the text box please tell us exactly how you would like your sign.
+                      <a data-bs-toggle="modal" href="#seeExmpModalTwo">See Examples</a>
+                  </p>
+              </div>
+              <div class="col-lg-9 col-md-12 col-12">
+                  <div class="row content-form-control-row mx-0">
+                      <div class="col-lg-12 col-md-12 col-12">
+                          <div class="content-form-control">
+                              <label>Text for your signs:</label>
+                              <textarea name="" rows="4" placeholder="Add text here"></textarea>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="row content-form-row gy-3">
+            <div class="col-lg-3 col-md-6 col-12">
+                <p>
+                    <b>Upload your logo</b>
+                    If no logo is uploaded, we will create a standard sign for you.
+                    <a data-bs-toggle="modal" href="#seeExmpModalThree">See Preview</a>
+                </p>
+            </div>
+            <div class="col-lg-9 col-md-12 col-12">
+                <div class="row content-form-control-row mx-0">
+                    <div class="col-lg-12 col-md-12 col-12">
+                        <div class="content-form-control">
+                            <div class="upload-box" id="drop-area">
+                                <label for="fileInput">
+                                    <strong>📎 Add file</strong> or drop it right here
+                                </label>
+                                <small>File must be in JPG or PNG format</small>
+                                <input type="file" name="" id="fileInput" accept=".jpg,.jpeg,.png" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <!-- Step 3 -->
+        <div class="form-step">
+            <div class="content-btn-wrap">
+                <h2>Shipping Information</h2>
+                <p>Please let us know where you would like us to ship your signs, and who will be receiving them to ensure they get displayed.</p>
+            </div>
+            <div class="row content-form-row gy-3 align-items-start">
+              <div class="col-lg-3 col-md-6 col-12">
+                  <p>
+                      <b>Introduce your information</b>
+                      It is important to check your shipping information. Please complete the info to finish your request <br />
+                      *Required fields
+                  </p>
+              </div>
+              <div class="col-lg-9 col-md-12 col-12">
+                  <div class="row content-form-control-row mx-0">
+                      <div class="col-lg-12 col-md-12 col-12 mb-4">
+                          <div class="content-form-control">
+                              <label>Property Name:</label>
+                              <input type="text" name="" placeholder="Add my company name" required>
+                          </div>
+                      </div>
+                      <div class="col-lg-12 col-md-12 col-12 mb-4">
+                          <div class="content-form-control">
+                              <label>First Name*</label>
+                              <input type="text" name="" placeholder="Add my first name">
+                          </div>
+                      </div>
+                      <div class="col-lg-12 col-md-12 col-12 mb-4">
+                          <div class="content-form-control">
+                              <label>Last Name*</label>
+                              <input type="text" name="" placeholder="Add my last name">
+                          </div>
+                      </div>
+                      <div class="col-lg-12 col-md-12 col-12 mb-4">
+                          <div class="content-form-control">
+                              <label>Shipping Address*</label>
+                              <input type="text" name="" placeholder="Add my address">
+                          </div>
+                      </div>
+                      <div class="col-lg-12 col-md-12 col-12 mb-4">
+                          <div class="content-form-control">
+                              <label>State</label>
+                              <select name="">
+                                  <option value="">Select a state</option>
+                                  <option value="AL">AL - Alabama</option>
+                                  <option value="AK">AK - Alaska</option>
+                                  <option value="AS">AS - American Samoa</option>
+                                  <option value="AZ">AZ - Arizona</option>
+                                  <option value="AR">AR - Arkansas</option>
+                                  <option value="CA">CA - California</option>
+                                  <option value="CO">CO - Colorado</option>
+                                  <option value="CT">CT - Connecticu</option>
+                                  <option value="DE">DE - Delaware</option>
+                                  <option value="DC">DC - District Of Columbia</option>
+                                  <option value="FM">FM - Federated States Of Micronesia</option>
+                                  <option value="FL">FL - Florida</option>
+                                  <option value="GA">GA - Georgia</option>
+                                  <option value="GU">GU - Guam</option>
+                                  <option value="HI">HI - Hawall</option>
+                                  <option value="ID">ID - Idaho</option>
+                                  <option value="IL">IL - linois</option>
+                                  <option value="IN">IN - Indiana</option>
+                                  <option value="IA">IA - lowa</option>
+                              </select>
+                          </div>
+                      </div>  
+                      <div class="col-lg-12 col-md-12 col-12 mb-4">
+                          <div class="content-form-control">
+                              <label>City</label>
+                              <input type="text" name="" placeholder="Add my city">
+                          </div>
+                      </div>    
+                      <div class="col-lg-12 col-md-12 col-12 mb-4">
+                          <div class="content-form-control">
+                              <label>Zip Code*</label>
+                              <input type="text" name="" placeholder="55555">
+                          </div>
+                      </div>      
+                      <div class="col-lg-12 col-md-12 col-12 mb-4">
+                          <div class="content-form-control">
+                              <label>Email Address*</label>
+                              <input type="text" name="" placeholder="example@example.com">
+                          </div>
+                      </div>   
+                      <div class="col-lg-12 col-md-12 col-12 mb-4">
+                          <div class="content-form-control">
+                              <label>Phone Number*</label>
+                              <input type="text" name="" placeholder="(555) 555-5555">
+                          </div>
+                      </div>                                            
+                  </div>
+              </div>
+          </div>
+        </div>
+          <!-- Step 4 -->
+        <div class="form-step">
+          <div class="content-confirm-bg">
+              <div class="confirm-text">
+                  <div class="confirm-msg-icon">
+                      <i class="fa-solid fa-envelope-circle-check"></i>
+                  </div>
+                  <h2>Thank you for submitting your form</h2>
+                  <p>Success! Your submission has been received and is being processed. You will receive a call shortly from our end.</p>
+              </div>
+          </div>
+        </div>
+        <!-- Navigation -->
+        <div class="form-nav step-flow-button">
+          <button type="button" class="cancel-btn" id="cancelBtn">Cancel</button>
+          <button type="button" class="cmn-btn cmn-btn-red" id="prevBtn">Previous</button>
+          <button type="button" class="cmn-btn next" id="nextBtn">Next</button>
+          <button type="submit" class="cmn-btn next" id="submitBtn" style="display:none;">Submit</button>
+        </div>
+      </form> 
+    </div>
+  </div>
+
+    <!-- Jquery-->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/step-form.js"></script>
+    <script src="js/show-hide.js"></script>
+</body>
+
+</html>
