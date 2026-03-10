@@ -20,7 +20,7 @@ require_once __DIR__ . '/helper.php';
 $firstName = htmlspecialchars(trim($_POST['firstName'] ?? ''));
 $lastName  = htmlspecialchars(trim($_POST['lastName'] ?? ''));
 $email     = filter_var($_POST['email'] ?? '', FILTER_VALIDATE_EMAIL);
-$help      = htmlsp ecialchars(trim($_POST['help'] ?? ''));
+$help      = htmlspecialchars(trim($_POST['help'] ?? ''));
 $msg       = htmlspecialchars(trim($_POST['msg'] ?? ''));
 
 if (!$firstName || !$lastName || !$email ||  !$help || !$msg) {

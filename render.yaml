@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: centralized-vision
+    env: docker
+    plan: free
+    autoDeploy: true
+    envVars:
+      - key: SMTP_HOST
+        sync: false
+      - key: SMTP_USERNAME
+        sync: false
+      - key: SMTP_PASSWORD
+        sync: false
+      - key: SMTP_PORT
+        value: "465"
+      - key: SMTP_ENCRYPTION
+        value: "ssl"
+      - key: SMTP_FROM_EMAIL
+        sync: false
+      - key: SMTP_FROM_NAME
+        value: "Centralize Vision"
+      - key: SMTP_TO_INFO_EMAIL
+        sync: false
+      - key: SMTP_TO_SUPPORT_EMAIL
+        sync: false

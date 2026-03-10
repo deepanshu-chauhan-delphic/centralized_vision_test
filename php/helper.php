@@ -8,6 +8,24 @@ function sendEmail($body, $subject, $form = null, $data = null)
     require __DIR__ . '/../vendor/autoload.php';
     require_once __DIR__ . '/config.php';
 
+    $required = [
+        'SMTP_HOST' => SMTP_HOST,
+        'SMTP_USERNAME' => SMTP_USERNAME,
+        'SMTP_PASSWORD' => SMTP_PASSWORD,
+        'SMTP_FROM_EMAIL' => SMTP_FROM_EMAIL,
+        'SMTP_TO_INFO_EMAIL' => SMTP_TO_INFO_EMAIL,
+        'SMTP_TO_SUPPORT_EMAIL' => SMTP_TO_SUPPORT_EMAIL,
+    ];
+    $missing = [];
+    foreach ($required as $key => $value) {
+        if ($value === '') {
+            $missing[] = $key;
+        }
+    }
+    if (!empty($missing)) {
+        return 'SMTP configuration missing: ' . implode(', ', $missing);
+    }
+
     $mail = new PHPMailer(true);
     try {
         $mail->isSMTP();
