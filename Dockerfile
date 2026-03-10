@@ -1,7 +1,7 @@
 FROM php:8.2-apache
 
 RUN apt-get update \
-    && apt-get install -y --no-install-recommends git unzip libpng-dev libjpeg-dev libfreetype6-dev libzip-dev \
+    && apt-get install -y --no-install-recommends git unzip libpng-dev libjpeg-dev libfreetype6-dev libzip-dev libonig-dev \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install gd mbstring zip \
     && a2enmod rewrite headers \
