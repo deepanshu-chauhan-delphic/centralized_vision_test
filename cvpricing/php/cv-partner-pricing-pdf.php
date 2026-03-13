@@ -367,7 +367,22 @@
                         <tr>
                             <td>Contact Term</td>
                             <td>
-                                <?= htmlspecialchars(($formData['contactTerm'] == 4 ? '6' : $formData['contactTerm']) . ' Years') ?>
+                                <?php
+                                $termLabels = [
+                                    'mtm' => 'Month-to-Month',
+                                    '6m' => '6 Months',
+                                    '1yr' => '1 Year',
+                                    '2yr' => '2 Years',
+                                    '3yr' => '3 Years',
+                                    // Backward-compatible values
+                                    '1' => '1 Year',
+                                    '2' => '6 Months',
+                                    '3' => 'Month-to-Month',
+                                    '4' => '6 Years',
+                                ];
+                                $termValue = $formData['contactTerm'] ?? '';
+                                echo htmlspecialchars($termLabels[$termValue] ?? $termValue);
+                                ?>
                             </td>
                         </tr>
                         <tr>

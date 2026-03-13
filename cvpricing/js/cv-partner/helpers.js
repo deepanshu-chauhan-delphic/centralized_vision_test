@@ -1,8 +1,47 @@
 import { BASE_URL } from '../config.js';
 
+const CAMERA_PLAN_BY_TERM = {
+  mtm: "3yr",
+  "6m": "4yr",
+  "1yr": "1yr",
+  "2yr": "2yr",
+  "3yr": "3yr",
+};
+
+const CV_MATRIX_TIER_BY_TERM = {
+  mtm: null,
+  "6m": null,
+  "1yr": "1",
+  "2yr": "2",
+  "3yr": "3",
+};
+
+async function fetchJsonWithFallback(relativePath) {
+  const sources = [`${BASE_URL}${relativePath}`, `./${relativePath}`];
+  let lastError = null;
+
+  for (const source of sources) {
+    try {
+      const request = await fetch(source, { cache: 'no-store' });
+      if (!request.ok) {
+        throw new Error(`Failed to load ${relativePath} from ${source}: ${request.status}`);
+      }
+      return await request.json();
+    } catch (error) {
+      lastError = error;
+    }
+  }
+
+  console.log(lastError);
+  return null;
+}
+
 function getVirtualGreeterPrice(year, residenceCount, type, pricingData) {
-  const data = pricingData.virtualGreeter[year];
-  if (!data) return null;
+  const tierKey = CV_MATRIX_TIER_BY_TERM[year];
+  if (!tierKey) return 0;
+
+  const data = pricingData.virtualGreeter[tierKey];
+  if (!data) return 0;
 
   let match = data.find((entry) => residenceCount <= entry.residence);
   if (!match) match = data[data.length - 1];
@@ -15,8 +54,11 @@ function getVirtualGreeterPrice(year, residenceCount, type, pricingData) {
 }
 
 function getVirtualEngineerPrice(year, systemCount, withGuard = false, pricingData) {
-  const data = pricingData.virtualEngineer[year];
-  if (!data) return null;
+  const tierKey = CV_MATRIX_TIER_BY_TERM[year];
+  if (!tierKey) return 0;
+
+  const data = pricingData.virtualEngineer[tierKey];
+  if (!data) return 0;
 
   let match = data.find((entry) => systemCount <= entry.systems);
   if (!match) match = data[data.length - 1];
@@ -25,30 +67,15 @@ function getVirtualEngineerPrice(year, systemCount, withGuard = false, pricingDa
 }
 
 async function getCvPartnerPricing() {
-  try {
-    const request = await fetch(`${BASE_URL}data/cv-partner-pricing.json`);
-    return request.json();
-  } catch (e) {
-    console.log(e)
-  }
+  return fetchJsonWithFallback('data/cv-partner-pricing.json');
 }
 
 async function getCameraPricing() {
-  try {
-    const request = await fetch(`${BASE_URL}data/camera-pricing.json`);
-    return request.json();
-  } catch (e) {
-    console.log(e)
-  }
+  return fetchJsonWithFallback('data/camera-pricing.json');
 }
 
 async function getCameraPricingForCvPartner() {
-  try {
-    const request = await fetch(`${BASE_URL}data/cv-camera-pricing.json`);
-    return request.json();
-  } catch (e) {
-    console.log(e)
-  }
+  return fetchJsonWithFallback('data/cv-camera-pricing.json');
 }
 
 function getVirtualGuardCameraPricing(agreementYears, numCameras, exactHours, cameraPricing) {
@@ -91,13 +118,13 @@ function getVirtualGuardCameraPricing(agreementYears, numCameras, exactHours, ca
     cameraKey = "75-100";
   }
 
-  // Get the price
-  const planKey = `${agreementYears}yr`;
-  const price = cameraPricing.pricing[planKey][hourRange][cameraKey];
-
-  if (price === undefined) {
-    throw new Error("Could not find pricing for the specified parameters.");
+  const planKey = CAMERA_PLAN_BY_TERM[agreementYears];
+  if (!planKey || !cameraPricing?.pricing?.[planKey]) {
+    return 0;
   }
+
+  const price = cameraPricing.pricing[planKey][hourRange][cameraKey];
+  if (price === undefined) return 0;
 
   return price;
 }

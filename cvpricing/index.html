@@ -387,7 +387,7 @@
                             <div class="form-col-box">
                                 <label>Inspection Type</label>
                                 <div class="cmn-select">
-                                    <select id="lgdisp-boolean">
+                                    <select id="msu-inspection-type">
                                         <option value="1" selected>Visual Verification</option>
                                         <option value="0">Visual Verification w/ Live Inspections</option>
                                     </select>
@@ -405,22 +405,22 @@
                             <div class="form-col-box">
                                 <label>Number of Units</label>
                                 <div class="cmn-select">
-                                    <select id="number-of-units">
-                                        <option value="0" selected>1</option>
-                                        <option value="1">2</option>
-                                        <option value="2">3</option>
-                                        <option value="3">4</option>
-                                        <option value="4">5</option>
-                                        <option value="5">6</option>
-                                        <option value="6">7</option>
-                                        <option value="7">8</option>
-                                        <option value="8">9</option>
-                                        <option value="9">10</option>
-                                        <option value="10">11</option>
-                                        <option value="11">12</option>
-                                        <option value="12">13</option>
-                                        <option value="13">14</option>
-                                        <option value="14">15</option>
+                                    <select id="msu-number-of-units">
+                                        <option value="1" selected>1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                        <option value="10">10</option>
+                                        <option value="11">11</option>
+                                        <option value="12">12</option>
+                                        <option value="13">13</option>
+                                        <option value="14">14</option>
+                                        <option value="15">15</option>
                                     </select>
                                 </div>
                             </div>
@@ -428,7 +428,7 @@
                             <div class="form-col-box">
                                 <label>Term</label>
                                 <div class="cmn-select">
-                                    <select id="time-plan">
+                                    <select id="msu-time-plan">
                                         <option value="1">1 Year</option>
                                         <option value="2" selected>6 Months</option>
                                         <option value="3">Month-to-Month</option>
@@ -475,7 +475,7 @@
                                                     <label>Monday</label>
                                                 </div>
                                                 <div class="col-md-6">
-                                                    <input type="number" class="input-day" id="mon-new" placeholder="12"
+                                                    <input type="number" class="input-day" id="msu-mon" placeholder="0"
                                                         min="0">
                                                 </div>
                                             </div>
@@ -486,7 +486,7 @@
                                                     <label>Tuesday</label>
                                                 </div>
                                                 <div class="col-md-6">
-                                                    <input type="number" class="input-day" id="tue-new" placeholder="12"
+                                                    <input type="number" class="input-day" id="msu-tue" placeholder="0"
                                                         min="0">
                                                 </div>
                                             </div>
@@ -497,7 +497,7 @@
                                                     <label>Wednesday</label>
                                                 </div>
                                                 <div class="col-md-6">
-                                                    <input type="number" class="input-day" id="wed-new" placeholder="12"
+                                                    <input type="number" class="input-day" id="msu-wed" placeholder="0"
                                                         min="0">
                                                 </div>
                                             </div>
@@ -508,7 +508,7 @@
                                                     <label>Thursday</label>
                                                 </div>
                                                 <div class="col-md-6">
-                                                    <input type="number" class="input-day" id="thu-new" placeholder="12"
+                                                    <input type="number" class="input-day" id="msu-thu" placeholder="0"
                                                         min="0">
                                                 </div>
                                             </div>
@@ -519,7 +519,7 @@
                                                     <label>Friday</label>
                                                 </div>
                                                 <div class="col-md-6">
-                                                    <input type="number" class="input-day" id="fri-new" placeholder="12"
+                                                    <input type="number" class="input-day" id="msu-fri" placeholder="0"
                                                         min="0">
                                                 </div>
                                             </div>
@@ -530,7 +530,7 @@
                                                     <label>Saturday</label>
                                                 </div>
                                                 <div class="col-md-6">
-                                                    <input type="number" class="input-day" id="sat-new" placeholder="12"
+                                                    <input type="number" class="input-day" id="msu-sat" placeholder="0"
                                                         min="0">
                                                 </div>
                                             </div>
@@ -541,7 +541,7 @@
                                                     <label>Sunday</label>
                                                 </div>
                                                 <div class="col-md-6">
-                                                    <input type="number" class="input-day" id="sun-new" placeholder="12"
+                                                    <input type="number" class="input-day" id="msu-sun" placeholder="0"
                                                         min="0">
                                                 </div>
                                             </div>
@@ -552,7 +552,7 @@
                                                     <label>Total Hours</label>
                                                 </div>
                                                 <div class="col-md-6">
-                                                    <div id="days-result-new" class="total-vl-div">84</div>
+                                                    <div id="msu-total-hours" class="total-vl-div">84</div>
                                                 </div>
                                             </div>
                                         </div>
@@ -562,7 +562,7 @@
                                                     <label>Average Daily Hours</label>
                                                 </div>
                                                 <div class="col-md-6">
-                                                    <div id="days-result-new" class="total-vl-div">12</div>
+                                                    <div id="msu-average-hours" class="total-vl-div">12</div>
                                                 </div>
                                             </div>
                                         </div>
@@ -602,7 +602,8 @@
                                 <label>Pricing Classification</label>
                                 <div class="cmn-select">
                                     <div class="cmn-select">
-                                        <input type="text" id="number-of-units" placeholder="AVG DAily Hours 0-12">
+                                        <input type="text" id="msu-pricing-classification" placeholder="AVG DAILY HOURS 0-12"
+                                            readonly>
                                     </div>
                                 </div>
                             </div>
@@ -611,7 +612,7 @@
                                 <label>Price per Hour</label>
                                 <div class="cmn-select">
                                     <div class="cmn-select">
-                                        <input type="text" id="price-per-hour" placeholder="$0.75">
+                                        <input type="text" id="msu-price-per-hour" placeholder="$0.75" readonly>
                                     </div>
                                 </div>
                             </div>
@@ -620,16 +621,8 @@
                                 <label>Monthly Wholesale Rate :</label>
                                 <div class="cmn-select">
                                     <div class="cmn-select">
-                                        <input type="text" id="monthly-wholesale-rate" placeholder="$273.00">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="form-col-box">
-                                <label>Mark Up %</label>
-                                <div class="cmn-select">
-                                    <div class="cmn-select">
-                                        <input type="text" id="mark-up-percent" placeholder="">
+                                        <input type="text" id="msu-monthly-wholesale-rate" placeholder="$273.00"
+                                            readonly>
                                     </div>
                                 </div>
                             </div>
@@ -638,7 +631,7 @@
                                 <label>Total Retail Price :</label>
                                 <div class="cmn-select">
                                     <div class="cmn-select">
-                                        <input type="text" id="total-retail-price" placeholder="$273.00">
+                                        <input type="text" id="msu-total-retail-price" placeholder="$273.00" readonly>
                                     </div>
                                 </div>
                             </div>
@@ -700,6 +693,16 @@
                             <td>
                                 <div id="total-price-table-vlu-rt">$ 0.00</div>
                             </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="form-table" id="msu-pricing-quote-table" style="display: none;">
+                    <h3>MSU Monitoring</h3>
+                    <table>
+                        <tr>
+                            <td>MSU Monitoring Pricing</td>
+                            <td id="msu-quote-wholesale">$ 0.00</td>
+                            <td id="msu-quote-retail">$ 0.00</td>
                         </tr>
                     </table>
                 </div>
@@ -765,9 +768,11 @@
                         <div class="row">
                             <div class="col-md-5">
                                 <select id="time-plan">
-                                    <option value="1">Contract Term - 1 Year</option>
-                                    <option value="2">Contract Term - 6 Months</option>
-                                    <option value="3" selected>Contract Term - Month-to-Month</option>
+                                    <!-- <option value="mtm" selected>Contract Term - Month-to-Month</option> -->
+                                    <option value="6m">Contract Term - 6 Months</option>
+                                    <option value="1yr">Contract Term - 1 Year</option>
+                                    <option value="2yr">Contract Term - 2 Years</option>
+                                    <option value="3yr">Contract Term - 3 Years</option>
                                 </select>
                             </div>
                             <div class="col-md-7 d-flex align-items-center">
@@ -851,40 +856,6 @@
             systemType.addEventListener("change", toggleSections);
         });
     </script>
-
-
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-
-            const wholesaleInput = document.querySelector("input[value='$273.00'], input[value='273.00']");
-            const markupInput = document.querySelectorAll("input")[12];
-            const retailInput = document.querySelectorAll("input")[13];
-
-            function cleanNumber(value) {
-                return parseFloat(value.replace(/[^0-9.]/g, "")) || 0;
-            }
-
-            function formatCurrency(value) {
-                return "$" + value.toFixed(2);
-            }
-
-            function calculateRetail() {
-
-                let wholesale = cleanNumber(wholesaleInput.value);
-                let markup = parseFloat(markupInput.value) || 0;
-
-                let retail = wholesale + (wholesale * markup / 100);
-
-                retailInput.value = formatCurrency(retail);
-            }
-
-            markupInput.addEventListener("input", calculateRetail);
-
-        });
-    </script>
-
-
 
 </body>
 

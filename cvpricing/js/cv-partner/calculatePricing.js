@@ -112,36 +112,41 @@ function addMarkup(userRequirements, pricingQuotes) {
         return;
     }
 
+    const markupFactor = 0.01 * userRequirements.markup;
+
     if(pricingQuotes.services.securityCamMonitoring.wholeSale) {
         const securityCamMonitoring = pricingQuotes.services.securityCamMonitoring;
-        securityCamMonitoring.priceToCustomer = securityCamMonitoring.wholeSale + (0.01 * userRequirements.markup * securityCamMonitoring.wholeSale);
+        securityCamMonitoring.priceToCustomer = securityCamMonitoring.wholeSale + (markupFactor * securityCamMonitoring.wholeSale);
     }
-   
+
     if(pricingQuotes.accessControl.monitor.wholesale) {
         pricingQuotes.accessControl.monitor.retail = pricingQuotes.accessControl.monitor.wholesale + (
-            0.01 * userRequirements.markup * pricingQuotes.accessControl.monitor.wholesale
+            markupFactor * pricingQuotes.accessControl.monitor.wholesale
         );
     }
 
     if(pricingQuotes.accessControl.databaseManage.wholesale) {
         pricingQuotes.accessControl.databaseManage.retail = pricingQuotes.accessControl.databaseManage.wholesale + (
-            0.01 * userRequirements.markup * pricingQuotes.accessControl.databaseManage.wholesale
+            markupFactor * pricingQuotes.accessControl.databaseManage.wholesale
         );
     }
 
     if(pricingQuotes.accessControl.both.wholesale) {
-        pricingQuotes.accessControl.both.retail = pricingQuotes.accessControl.databaseManage.retail + pricingQuotes.accessControl.monitor.retail;
+        pricingQuotes.accessControl.both.retail = (
+            pricingQuotes.accessControl.databaseManage.retail +
+            pricingQuotes.accessControl.monitor.retail
+        );
     }
 
     if(pricingQuotes.virtualGreet.wholesale) {
         pricingQuotes.virtualGreet.retail = pricingQuotes.virtualGreet.wholesale + (
-            0.01 * userRequirements.markup * pricingQuotes.virtualGreet.wholesale
+            markupFactor * pricingQuotes.virtualGreet.wholesale
         )
     }
 
     if(pricingQuotes.virtualEng.wholesale) {
         pricingQuotes.virtualEng.retail = pricingQuotes.virtualEng.wholesale + (
-            0.01 * userRequirements.markup * pricingQuotes.virtualEng.wholesale
+            markupFactor * pricingQuotes.virtualEng.wholesale
         )
     }
 }
