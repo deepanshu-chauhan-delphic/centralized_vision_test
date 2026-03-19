@@ -41,7 +41,7 @@
     <section class="form-sec">
         <div class="container">
             <div class="cmn-hd">
-                <h2>Virtual Guard</h2>
+                <h2 id="vg-section-heading">Virtual Guard</h2>
             </div>
             <div class="form-wrap">
                 <div class="row form-row">
@@ -64,7 +64,7 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="form-col-box">
+                        <div class="form-col-box" id="cctv-num-cameras-box">
                             <label>Number of Cameras to be Monitored?</label>
                             <input type="number" id="number-of-cameras-new" placeholder="0">
                             <span class="notice-text">(If over 100 cameras, please <a
@@ -226,17 +226,54 @@
                     <div class="col-lg-4 form-col">
                         <div class="form-col-center">
                             <div class="form-col-center-inner">
-                                <h3>Virtual Guard Base Offering includes:</h3>
-                                <ul class="list-items">
-                                    <li>2, LIVE 10-minute visual inspections (20 min) performed randomly or scheduled,
-                                        each hr. during monitoring hours.</li>
-                                    <li>Unlimited LIVE Camera alert visual verification, during monitoring hours.</li>
-                                    <li>Video footage review and investigation service, offered in conjunction with
-                                        monitoring hours only.</li>
-                                    <li>If audio capabilities are, available, there is no additional charge for CV to
-                                        access and utilize. <br>(This is for both integrated and non-integrated systems)
-                                    </li>
-                                </ul>
+                                <div class="form-col-box" id="msu-inspection-box" style="display:none;">
+                                    <label>Inspection Type</label>
+                                    <div class="cmn-select">
+                                        <select id="msu-inspection-type">
+                                            <option value="1" selected>Visual Verification</option>
+                                            <option value="0">Visual Verification w/ Live Inspections</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-col-box" id="msu-units-box" style="display:none;">
+                                    <label>Number of Units</label>
+                                    <div class="cmn-select">
+                                        <select id="msu-number-of-units">
+                                            <option value="1" selected>1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
+                                            <option value="11">11</option>
+                                            <option value="12">12</option>
+                                            <option value="13">13</option>
+                                            <option value="14">14</option>
+                                            <option value="15">15</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="vg-base-offering-col">
+                            <div class="form-col-center">
+                                <div class="form-col-center-inner">
+                                    <h3>Virtual Guard Base Offering includes:</h3>
+                                    <ul class="list-items">
+                                        <li>2, LIVE 10-minute visual inspections (20 min) performed randomly or scheduled,
+                                            each hr. during monitoring hours.</li>
+                                        <li>Unlimited LIVE Camera alert visual verification, during monitoring hours.</li>
+                                        <li>Video footage review and investigation service, offered in conjunction with
+                                            monitoring hours only.</li>
+                                        <li>If audio capabilities are, available, there is no additional charge for CV to
+                                            access and utilize. <br>(This is for both integrated and non-integrated systems)
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -387,7 +424,7 @@
                             <div class="form-col-box">
                                 <label>Inspection Type</label>
                                 <div class="cmn-select">
-                                    <select id="msu-inspection-type">
+                                    <select id="msu-inspection-type-old">
                                         <option value="1" selected>Visual Verification</option>
                                         <option value="0">Visual Verification w/ Live Inspections</option>
                                     </select>
@@ -405,7 +442,7 @@
                             <div class="form-col-box">
                                 <label>Number of Units</label>
                                 <div class="cmn-select">
-                                    <select id="msu-number-of-units">
+                                    <select id="msu-number-of-units-old">
                                         <option value="1" selected>1</option>
                                         <option value="2">2</option>
                                         <option value="3">3</option>
@@ -428,7 +465,7 @@
                             <div class="form-col-box">
                                 <label>Term</label>
                                 <div class="cmn-select">
-                                    <select id="msu-time-plan">
+                                    <select id="msu-time-plan-old">
                                         <option value="1">1 Year</option>
                                         <option value="2" selected>6 Months</option>
                                         <option value="3">Month-to-Month</option>
@@ -650,7 +687,7 @@
                 <h2>Pricing Quote</h2>
             </div>
             <div class="form-wrap">
-                <div class="form-table">
+                <div class="form-table" id="vg-quote-table">
                     <h3>Virtual Guard</h3>
                     <table>
                         <tr>
@@ -706,7 +743,7 @@
                         </tr>
                     </table>
                 </div>
-                <div class="form-table">
+                <div class="form-table" id="vg-access-control-quote">
                     <h3>Virtual Guard Access Control</h3>
                     <table>
                         <tr>
@@ -728,7 +765,7 @@
                         </tr>
                     </table>
                 </div>
-                <div class="form-table">
+                <div class="form-table" id="vg-greeter-quote">
                     <h3>Virtual Greeter/Concierge</h3>
                     <table>
                         <tr>
@@ -738,7 +775,7 @@
                         </tr>
                     </table>
                 </div>
-                <div class="form-table">
+                <div class="form-table" id="vg-eng-quote">
                     <h3>Virtual Engineering</h3>
                     <table>
                         <tr>
@@ -766,13 +803,20 @@
                 <div class="form-table">
                     <div class="two-col">
                         <div class="row">
-                            <div class="col-md-5">
+                            <div class="col-md-5" id="cctv-contract-term-wrapper">
                                 <select id="time-plan">
                                     <!-- <option value="mtm" selected>Contract Term - Month-to-Month</option> -->
                                     <option value="6m">Contract Term - 6 Months</option>
                                     <option value="1yr">Contract Term - 1 Year</option>
                                     <option value="2yr">Contract Term - 2 Years</option>
                                     <option value="3yr">Contract Term - 3 Years</option>
+                                </select>
+                            </div>
+                            <div class="col-md-5" id="msu-contract-term-wrapper" style="display:none;">
+                                <select id="msu-time-plan">
+                                    <option value="1">Contract Term - 1 Year</option>
+                                    <option value="2" selected>Contract Term - 6 Months</option>
+                                    <option value="3">Contract Term - Month-to-Month</option>
                                 </select>
                             </div>
                             <div class="col-md-7 d-flex align-items-center">
@@ -836,19 +880,38 @@
             const msuSection = document.getElementById("msu-section");
 
             function toggleSections() {
-
                 // 1 = CCTV Networked System
                 // 0 = MSU (Mobile Surveillance Unit)
+                const isMsu = systemType.value === "0";
 
-                if (systemType.value === "0") {
-                    // MSU selected
-                    msuSection.style.display = "block";
-                    nonMsuSections.style.display = "none";
-                } else {
-                    // CCTV selected
-                    msuSection.style.display = "none";
-                    nonMsuSections.style.display = "block";
-                }
+                // The old dedicated MSU section is always hidden —
+                // MSU inputs are now embedded in the main VG section
+                msuSection.style.display = "none";
+
+                // Non-MSU sections (Access Control, Greeter, Engineer)
+                nonMsuSections.style.display = isMsu ? "none" : "block";
+
+                // Main section heading
+                document.getElementById("vg-section-heading").textContent =
+                    isMsu ? "MSU (Mobile Surveillance Unit) Monitoring" : "Virtual Guard";
+
+                // Left column: cameras (CCTV) vs inspection + units (MSU)
+                document.getElementById("cctv-num-cameras-box").style.display = isMsu ? "none" : "block";
+                document.getElementById("msu-inspection-box").style.display  = isMsu ? "block" : "none";
+                document.getElementById("msu-units-box").style.display        = isMsu ? "block" : "none";
+
+                // Right column: Virtual Guard Base Offering (CCTV only)
+                document.getElementById("vg-base-offering-col").style.display = isMsu ? "none" : "block";
+
+                // Pricing Quote tables
+                document.getElementById("vg-quote-table").style.display         = isMsu ? "none" : "block";
+                document.getElementById("vg-access-control-quote").style.display = isMsu ? "none" : "block";
+                document.getElementById("vg-greeter-quote").style.display        = isMsu ? "none" : "block";
+                document.getElementById("vg-eng-quote").style.display            = isMsu ? "none" : "block";
+
+                // Contract term selects in Pricing Quote
+                document.getElementById("cctv-contract-term-wrapper").style.display = isMsu ? "none" : "block";
+                document.getElementById("msu-contract-term-wrapper").style.display  = isMsu ? "block" : "none";
             }
 
             toggleSections();

@@ -161,7 +161,8 @@ function getCctvDayInputs() {
 }
 
 function getMsuDayInputs() {
-  return $("#msu-section .input-day");
+  // MSU now reuses the main VG section's day inputs
+  return getCctvDayInputs();
 }
 
 function getCctvSelectById(id) {
