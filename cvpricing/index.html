@@ -71,24 +71,36 @@
                                     href="https://centralizedvision.com/contact-us/" target="_blank">call for
                                     pricing)</a></span>
                         </div>
-                        <div class="form-col-box">
-                            <label>Number of Camera’s you would like on A.I?</label>
-                            <div class="two-col">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <input type="number" id="number-of-ai-cameras" placeholder="0">
-                                    </div>
-                                    <div class="col-md-6">
-                                        <a href="pdf/AI-RTSP-SMTP-Variables-B.pdf" target="_blank" class="cmn-btn">Click
-                                            here for specs</a>
-                                    </div>
-                                </div>
+                        <div class="form-col-box" id="msu-inspection-box-left" style="display:none;">
+                            <label>Inspection Type</label>
+                            <div class="cmn-select">
+                                <select id="msu-inspection-type">
+                                    <option value="1" selected>Visual Verification</option>
+                                    <option value="0">Visual Verification w/ Live Inspections</option>
+                                </select>
                             </div>
-                            <span class="notice-text">In instances when the legacy system doesn't have A.I. or offers
-                                basic non-analytic alerting, CV may add a cloud based A.I. solution to boost alerting
-                                performance.</span>
-                            <span class="notice-text">(If more than 100 camera’s please contact supervisor for
-                                pricing.)</span>
+                        </div>
+                        <div class="form-col-box" id="msu-units-box-left" style="display:none;">
+                            <label>Number of Units</label>
+                            <div class="cmn-select">
+                                <select id="msu-number-of-units">
+                                    <option value="1" selected>1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                    <option value="13">13</option>
+                                    <option value="14">14</option>
+                                    <option value="15">15</option>
+                                </select>
+                            </div>
                         </div>
                         <div class="form-col-box">
                             <label>Holiday Monitoring – Choose # of days</label>
@@ -226,37 +238,6 @@
                     <div class="col-lg-4 form-col">
                         <div class="form-col-center">
                             <div class="form-col-center-inner">
-                                <div class="form-col-box" id="msu-inspection-box" style="display:none;">
-                                    <label>Inspection Type</label>
-                                    <div class="cmn-select">
-                                        <select id="msu-inspection-type">
-                                            <option value="1" selected>Visual Verification</option>
-                                            <option value="0">Visual Verification w/ Live Inspections</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="form-col-box" id="msu-units-box" style="display:none;">
-                                    <label>Number of Units</label>
-                                    <div class="cmn-select">
-                                        <select id="msu-number-of-units">
-                                            <option value="1" selected>1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                            <option value="6">6</option>
-                                            <option value="7">7</option>
-                                            <option value="8">8</option>
-                                            <option value="9">9</option>
-                                            <option value="10">10</option>
-                                            <option value="11">11</option>
-                                            <option value="12">12</option>
-                                            <option value="13">13</option>
-                                            <option value="14">14</option>
-                                            <option value="15">15</option>
-                                        </select>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                         <div id="vg-base-offering-col">
@@ -897,8 +878,8 @@
 
                 // Left column: cameras (CCTV) vs inspection + units (MSU)
                 document.getElementById("cctv-num-cameras-box").style.display = isMsu ? "none" : "block";
-                document.getElementById("msu-inspection-box").style.display  = isMsu ? "block" : "none";
-                document.getElementById("msu-units-box").style.display        = isMsu ? "block" : "none";
+                document.getElementById("msu-inspection-box-left").style.display  = isMsu ? "block" : "none";
+                document.getElementById("msu-units-box-left").style.display        = isMsu ? "block" : "none";
 
                 // Right column: Virtual Guard Base Offering (CCTV only)
                 document.getElementById("vg-base-offering-col").style.display = isMsu ? "none" : "block";
